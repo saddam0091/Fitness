@@ -1,0 +1,21 @@
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.pagination {
+	& ul > li {
+		@include flex-center;
+		border: 2px solid transparent;
+		cursor: pointer;
+		width: 2.143em;
+		height: 2.143em;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			border: 2px solid $color-primary;
+		}
+	}
+
+	& .pg-active {
+		border-color: $color-primary;
+	}
+}

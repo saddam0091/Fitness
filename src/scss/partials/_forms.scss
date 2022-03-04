@@ -1,0 +1,29 @@
+/* ===================================
+             Forms
+=================================== */
+@use '../base/colors' as *;
+
+.custom-input {
+	padding: 1rem;
+	border: 2px solid $color-grey;
+	border-radius: 0;
+	font-size: 1.4rem;
+	font-weight: 500;
+	transition: all 0.2s ease-in-out;
+
+	&:focus {
+		outline: none;
+		border-color: $color-primary;
+		box-shadow: none;
+	}
+}
+.form-check-input {
+	width: 18px;
+	height: 18px;
+	border: 2px solid $color-grey !important;
+
+	&:checked {
+		background-color: $color-primary;
+		border-color: $color-primary !important;
+	}
+}

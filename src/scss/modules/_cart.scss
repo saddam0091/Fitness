@@ -1,0 +1,47 @@
+@use '../base/colors' as *;
+@use '../abstracts/placeholders' as *;
+
+.cart {
+	@extend %search-cart;
+	background-color: #fff;
+	right: 0;
+	top: 100%;
+	border-radius: 0.25rem;
+	.top,
+	ul > li a {
+		border-bottom: 1px solid #ebebeb;
+		padding: 1.5rem 2.5rem;
+	}
+	ul > li a:hover {
+		background-image: linear-gradient(to right, #fff, #ebebeb);
+	}
+	.bottom {
+		> div {
+			width: 50%;
+		}
+		a {
+			display: inline-block;
+			padding: 2rem 1.5rem;
+			color: $color-dark;
+			text-align: center;
+			width: 100%;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				color: #fff;
+				background-color: $color-primary;
+			}
+		}
+	}
+	.close {
+		font-size: 13px;
+		color: $color-primary;
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	img {
+		border: 1px solid #ebebeb;
+	}
+}

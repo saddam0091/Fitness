@@ -1,0 +1,8 @@
+/* ========== SCSS Functions ========== */
+
+@function font-size-calc($min, $max, $screen-size) {
+	@return calc($min + ($max - $min) * (($screen-size - 320) / (1400 - 320)));
+}
+@function margin-calc($min, $max, $screen-size) {
+	@return calc($min + ($max - $min) * (($screen-size - 320) / (1400 - 320)));
+}

@@ -1,0 +1,358 @@
+/* ===================================
+			 User Account Page
+=================================== */
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-my-account {
+	background: url(../img/myAccount/hero.jpg) no-repeat center;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* ========== User Account ========== */
+.information {
+	color: #000;
+	.navbar-tactical::after {
+		right: -8px;
+	}
+	.top ul {
+		background-color: #fff;
+		padding: 1.6rem 1.5rem;
+		@include md {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		@include xl {
+			padding-left: 6.5rem;
+			padding-right: 6.5rem;
+		}
+		&:first-child {
+			flex-direction: column;
+			margin-bottom: 1px;
+			@include xs {
+				flex-direction: row;
+			}
+			li {
+				@include xs {
+					flex-basis: 50%;
+				}
+			}
+		}
+	}
+	.cart {
+		@include xs {
+			text-align: right;
+		}
+	}
+}
+#custom-tab-menu {
+	span {
+		display: block;
+		font-weight: 700;
+		color: $color-primary;
+		background-color: #fff;
+		padding: 16px 0 16px 45px;
+		margin-bottom: 2px;
+		@include lg {
+			padding-left: 5.5rem;
+		}
+		@include xl {
+			padding-left: 6.5rem;
+		}
+	}
+	li a {
+		padding-left: 5.5rem;
+		@include lg {
+			padding-left: 5rem;
+			padding-right: 1.42rem;
+		}
+		@include xl {
+			padding-left: 5.5rem;
+			padding-right: 0;
+		}
+		&::before {
+			@include lg {
+				transform: translateY(-50%) rotate(90deg);
+			}
+			@include xl {
+				transform: translateY(-50%) rotate(0deg);
+			}
+		}
+		&.active {
+			@include lg {
+				background-image: linear-gradient(
+					to bottom,
+					#fff 50%,
+					rgba(255, 255, 255, 0)
+				);
+			}
+			@include xl {
+				background-image: linear-gradient(
+					to right,
+					#fff 50%,
+					rgba(255, 255, 255, 0)
+				);
+			}
+		}
+	}
+}
+table {
+	.fa-icon {
+		color: #000;
+		width: 59px;
+		padding-right: 24px;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+		&:hover,
+		&:hover::after {
+			color: $color-primary;
+		}
+	}
+	thead th {
+		@include md {
+			padding-top: 0.8rem !important;
+			padding-bottom: 0.8rem !important;
+		}
+	}
+	tr > *:first-child {
+		@include md {
+			padding-left: 4.5rem !important;
+		}
+	}
+}
+.table-title {
+	position: relative;
+	background-color: #fff;
+	padding: 16px 0 16px 45px;
+	margin-bottom: 0.6rem;
+	@include lg {
+		margin-bottom: 1.2rem;
+		padding-left: 5.5rem;
+	}
+	&.fa-icon::before {
+		position: absolute;
+		content: '\f07a';
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		@include lg {
+			left: 25px;
+		}
+	}
+}
+.table {
+	display: block;
+	@include md {
+		display: table;
+	}
+	tbody,
+	tr,
+	td {
+		display: block;
+	}
+	thead {
+		display: none;
+		@include md {
+			display: table-header-group;
+		}
+	}
+	tr {
+		margin-bottom: 1rem;
+		@include md {
+			display: table-row;
+			margin-bottom: 0;
+		}
+		> * {
+			background-color: #fff;
+		}
+		&:hover {
+			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		}
+	}
+	tbody {
+		@include md {
+			display: table-row-group;
+		}
+		tr > * {
+			text-align: right;
+			padding-left: 50%;
+			padding-right: 1.5rem;
+			position: relative;
+			@include md {
+				padding: 0.5rem 0.5rem;
+				position: initial;
+			}
+		}
+	}
+	td {
+		&::before {
+			display: inline-block;
+			content: attr(data-label);
+			position: absolute;
+			left: 0;
+			width: 50%;
+			text-align: left;
+			font-family: $font-stack-primary;
+			font-weight: 600;
+			padding-left: 1.5rem;
+			@include md {
+				display: none;
+			}
+		}
+		@include md {
+			display: table-cell;
+		}
+	}
+}
+.table-1 tbody tr > *,
+.table-2 tbody tr > * {
+	padding-top: 18px !important;
+	padding-bottom: 18px !important;
+}
+.table-1 {
+	tbody tr {
+		td:first-child {
+			font-weight: 600;
+			color: $color-primary;
+		}
+		> * {
+			@include md {
+				text-align: initial;
+				padding-top: 2rem !important;
+				padding-bottom: 2rem !important;
+			}
+		}
+	}
+	.fa-icon::after {
+		position: absolute;
+		content: '\f0da';
+		font-size: 1.8rem;
+		color: $color-grey;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		transition: all 0.2s ease-in-out;
+		@include md {
+			right: 0;
+		}
+	}
+	tr > * {
+		&:last-child {
+			@include md {
+				padding-right: 3.5rem !important;
+			}
+			@include lg {
+				padding-right: 5.5rem !important;
+			}
+		}
+		&:first-child {
+			@include lg {
+				padding-left: 5.5rem !important;
+			}
+		}
+	}
+}
+.table-2 {
+	.img-area {
+		width: 80px;
+		height: 80px;
+		margin-left: auto;
+		@include md {
+			margin: auto;
+		}
+	}
+	thead tr > * {
+		text-align: center;
+	}
+	tbody tr > * {
+		vertical-align: middle;
+		@include md {
+			text-align: center;
+		}
+	}
+	.fa-shopping-basket {
+		font-size: 1.8rem;
+		color: $color-grey;
+		transition: all 0.2s ease-in-out;
+	}
+	tr > *:last-child {
+		@include md {
+			padding-right: 1.5rem !important;
+		}
+		@include lg {
+			padding-right: 5.5rem !important;
+		}
+	}
+}
+#acc {
+	> div {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		@include md {
+			padding: 2.5rem 4.5rem;
+		}
+		@include lg {
+			padding: 3.5rem 5.5rem;
+		}
+	}
+	ul {
+		flex-direction: column;
+		@include xs {
+			flex-direction: row;
+		}
+		li {
+			@include xs {
+				flex-basis: 50%;
+			}
+		}
+	}
+}
+.remove span,
+.add {
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+.remove span:hover,
+.add .fa-shopping-basket:hover {
+	color: $color-primary;
+}
+[class|='review-item'] {
+	background-color: #fff;
+	padding: 2.5rem 1.5rem;
+	@include md {
+		padding: 2.5rem 4.5rem;
+	}
+	@include lg {
+		padding: 3.5rem 5.5rem;
+	}
+}
+[class|='review-item']:not(:last-child) {
+	margin-bottom: 1.5rem;
+}
+#review .img-area {
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+	@include md {
+		margin: auto;
+	}
+}
+#button-login {
+	@include lg {
+		margin-top: 26px;
+	}
+}
+#login-area .contents {
+	@include xxl {
+		padding: 100px 70px;
+	}
+}

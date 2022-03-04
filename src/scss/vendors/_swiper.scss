@@ -1,0 +1,331 @@
+/* ===================================
+		       Swiper
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.swiper1 {
+	.swiper-button-prev {
+		top: 50%;
+		border-bottom: 65px solid transparent;
+		border-left: 40px solid $color-secondary;
+		transform: rotateZ(-45deg);
+		left: 17px;
+		@include xl {
+			border-bottom: 115px solid transparent;
+			border-left: 70px solid $color-secondary;
+			left: 35px;
+		}
+	}
+	.swiper-button-next {
+		top: 35%;
+		border-bottom: 65px solid transparent;
+		border-right: 40px solid $color-primary;
+		transform: rotateZ(45deg);
+		right: 17px;
+		@include xl {
+			border-bottom: 115px solid transparent;
+			border-right: 70px solid $color-primary;
+			right: 35px;
+		}
+	}
+	.swiper-button-prev::after {
+		@extend %swiper1-btns;
+		left: -30px;
+		content: '\f053';
+		transform: rotateZ(45deg);
+		@include xl {
+			top: 14px;
+			font-size: 2rem;
+			left: -52px;
+		}
+	}
+	.swiper-button-next::after {
+		@extend %swiper1-btns;
+		right: -30px;
+		content: '\f054';
+		transform: rotateZ(-45deg);
+		@include xl {
+			top: 14px;
+			font-size: 2rem;
+			right: -52px;
+		}
+	}
+	.swiper-pagination {
+		bottom: 20% !important;
+		&-bullet {
+			background: $color-body;
+			&-active {
+				background: $color-primary;
+			}
+		}
+		@include md {
+			bottom: 18% !important;
+		}
+	}
+	[class|='swiper-button'] {
+		display: none;
+		@include sm {
+			display: block;
+		}
+	}
+}
+.swiper7 {
+	.swiper-button-next {
+		@extend %swiper7-btns;
+		right: 0;
+		&::after {
+			@extend %swiper7-btns-after;
+		}
+		&:hover::after {
+			background-color: #fff;
+			color: $color-primary;
+		}
+	}
+	.swiper-button-prev {
+		@extend %swiper7-btns;
+		right: 50px;
+		left: auto;
+		&::after {
+			@extend %swiper7-btns-after;
+			content: '\f053';
+		}
+		&:hover::after {
+			background-color: #fff;
+			color: $color-primary;
+		}
+	}
+}
+.swiper2 {
+	.swiper-pagination {
+		bottom: -18% !important;
+		&-bullet-active {
+			background: $color-primary;
+		}
+	}
+	.swiper-button-next {
+		top: 6px;
+		left: 50%;
+		transform: translate(-50%, -11%);
+		font-size: 1.5rem;
+		color: $color-primary;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: $color-light;
+		z-index: 1;
+		@include lg {
+			top: 2px;
+			width: 50px;
+			height: 50px;
+		}
+		&::after {
+			@include lg {
+				width: 60px;
+				height: 60px;
+			}
+		}
+		&::before {
+			@include lg {
+				width: 70px;
+				height: 70px;
+			}
+		}
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			border-radius: 50%;
+			border: 0.1rem solid $color-light;
+			opacity: 0;
+			animation: playbutton 1s linear infinite;
+		}
+		&::after {
+			width: 50px;
+			height: 50px;
+		}
+		&::before {
+			width: 60px;
+			height: 60px;
+		}
+		&:hover::before {
+			animation-delay: 0.5s;
+		}
+		&:active::before,
+		&:active::after {
+			animation: none;
+		}
+	}
+	.swiper-slide {
+		@include sm {
+			width: 50%;
+		}
+		@include lg {
+			width: 33.33333%;
+		}
+		@include xl {
+			width: 25%;
+		}
+	}
+}
+@keyframes playbutton {
+	0% {
+		transform: scale(0.5);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}
+.swiper3 {
+	padding-bottom: 4rem;
+	max-width: 290px;
+	margin: auto;
+	@include md {
+		max-width: 540px;
+	}
+	@include lg {
+		max-width: 720px;
+	}
+	@include xl {
+		max-width: 960px;
+		padding-bottom: 6rem;
+	}
+	@include xxl {
+		max-width: 1140px;
+	}
+	@include wide {
+		max-width: 1320px;
+	}
+	.swiper-slide {
+		max-width: 290px;
+		margin-right: 1.5rem;
+		@include md {
+			max-width: 247.5px;
+		}
+		@include lg {
+			max-width: 330px;
+			margin-right: 3rem;
+		}
+		@include xl {
+			max-width: 289.98px;
+		}
+		@include xxl {
+			max-width: 255px;
+		}
+		@include wide {
+			max-width: 300px;
+		}
+	}
+	.swiper-pagination {
+		bottom: 0;
+		&-bullet {
+			background-color: #ebebeb;
+		}
+	}
+}
+.swiper4 {
+	.swiper-slide {
+		position: relative;
+		img {
+			filter: grayscale(100);
+			transition: all 0.5s ease;
+		}
+		&::after {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			bottom: 20%;
+			left: 50%;
+			transform: translateX(-50%);
+			content: 'FULL SCREEN';
+			font-size: 1.2rem;
+			color: $color-light;
+			font-weight: 600;
+			padding: 0.65rem 1.5rem;
+			width: max-content;
+			background-color: $color-primary;
+			cursor: pointer;
+			z-index: 10;
+			transition: all 0.3s ease-in-out;
+			@include lg {
+				font-size: 1.4rem;
+				padding: 0.65rem 1.5rem;
+			}
+		}
+		&:hover {
+			img {
+				filter: grayscale(0);
+			}
+			&::after {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+		@include xxs {
+			width: 50%;
+		}
+		@include lg {
+			width: 33.33333%;
+		}
+		@include xxl {
+			width: 25%;
+		}
+	}
+	&-prev,
+	&-next {
+		font-size: 1.3rem;
+		width: 3.55rem;
+		height: 3.55rem;
+		@include md {
+			background-color: $color-light;
+		}
+	}
+	&-prev::after {
+		content: '\f053';
+	}
+	&-next::after {
+		content: '\f054';
+	}
+	&-prev::after,
+	&-next::after {
+		position: absolute;
+		font-size: 1.4rem;
+		font-weight: 600;
+		color: $color-grey;
+		transition: all 0.2s ease-in-out;
+	}
+	&-prev:hover::after,
+	&-next:hover::after {
+		color: $color-primary !important;
+	}
+}
+.swiper6 {
+	.swiper-slide {
+		width: 50%;
+		padding: 0 2rem;
+		@include xxs {
+			width: 33.333333%;
+			padding: 0 1rem;
+		}
+		@include sm {
+			width: 25%;
+			padding: 0 1rem;
+		}
+		@include lg {
+			width: 20%;
+		}
+		@include xl {
+			padding: 0 2rem;
+		}
+		@include xxl {
+			width: 16.66667%;
+		}
+		@include wide {
+			padding: 0 3rem;
+		}
+	}
+}

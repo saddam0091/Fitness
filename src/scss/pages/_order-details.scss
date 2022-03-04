@@ -1,0 +1,86 @@
+/* ===================================
+			 Order Details Page
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-order-details {
+	background: url(../img/order-details/hero.jpg) no-repeat center;
+}
+
+/* ========== Order Information ========== */
+.order-info {
+	.table-1 {
+		tbody tr td:first-child {
+			color: #212529;
+		}
+		.img-area {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		tr > * {
+			vertical-align: middle;
+			text-align: center !important;
+		}
+	}
+	.top ul {
+		&:first-child {
+			@include sm {
+				display: flex;
+				flex-direction: row;
+			}
+			li:last-child {
+				@include sm {
+					text-align: end;
+				}
+			}
+		}
+	}
+	.table-title {
+		@include xl {
+			padding-left: 6.5rem;
+		}
+	}
+}
+.customer-payment {
+	.item-1,
+	.item-2 {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		@include md {
+			padding-left: 4.5rem;
+			padding-right: 4.5em;
+		}
+		@include lg {
+			padding: 3.5rem 5.5rem;
+		}
+		@include xxl {
+			padding: 3.5rem 6.5rem;
+		}
+	}
+	.item-1 li,
+	.item-2 li {
+		color: #000;
+		display: flex;
+		justify-content: space-between;
+		padding: 1.2rem 0;
+		border-bottom: 1px solid $color-grey;
+	}
+	.item-1 li {
+		flex-direction: column;
+		@include sm {
+			flex-direction: row;
+		}
+	}
+	.billing-addr {
+		@include sm {
+			text-align: end;
+		}
+	}
+}

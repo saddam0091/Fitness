@@ -1,0 +1,131 @@
+/* ===================================
+             Navbar
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar-nav {
+	background-color: #fff;
+	box-shadow: 0 4px 9px 0 rgba(67, 65, 79, 0.1);
+	margin-top: 0.1rem !important;
+	max-height: 350px;
+	overflow-y: scroll;
+	@include xl {
+		box-shadow: none;
+		overflow-y: initial;
+	}
+}
+.nav-item {
+	padding: 5px 10px;
+	@include xl {
+		padding: 0;
+	}
+}
+#navbarSupportedContent {
+	position: absolute !important;
+	top: 100%;
+	margin-top: 1.5rem;
+	width: 100%;
+	z-index: 1;
+	@include xl {
+		position: initial !important;
+		top: 0;
+		margin-top: 0;
+		width: initial;
+	}
+}
+.tactical > div {
+	width: max-content;
+}
+.navbar-tactical {
+	position: relative;
+	text-decoration: none;
+	font-size: 15px;
+	color: $color-secondary;
+	&:hover {
+		color: initial;
+	}
+	&:last-child::after {
+		content: '3';
+		display: table;
+		clear: both;
+		position: absolute;
+		right: -50%;
+		top: 25%;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		font-size: 10px;
+		color: $color-light;
+		font-weight: bold;
+		text-align: center;
+		background-color: $color-primary;
+	}
+}
+.nav-link {
+	color: $color-grey !important;
+	transition: all 0.15s ease-in-out;
+	@include xl {
+		padding: 1.714em 0.714em !important;
+	}
+	@include xxl {
+		padding: 2.071em 1.214em !important;
+	}
+	&:hover {
+		color: $color-primary !important;
+	}
+}
+.fa-bars {
+	font-size: 1.6rem;
+	color: $color-primary;
+}
+.dropdown-toggle::after {
+	vertical-align: middle;
+}
+.dropdown-menu {
+	min-width: 230px;
+	margin-left: 1rem;
+	border: none;
+	@include xl {
+		min-width: 230px;
+		margin-left: 0;
+		box-shadow: 0 4px 9px 0 rgba(67, 65, 79, 0.1);
+		margin-top: 0.1rem !important;
+	}
+}
+.dropdown-item {
+	font-size: 14px;
+	color: $color-grey !important;
+	padding: 1rem 1.2rem !important;
+	border-radius: 4px;
+	&:hover {
+		background-color: transparent !important;
+		color: $color-primary !important;
+	}
+}
+.navbar-toggler {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ee2034 !important;
+	padding: 0;
+	cursor: pointer;
+	@include flex-center;
+	transition: all 0.4s ease-in-out;
+	&:focus,
+	&:active,
+	&-icon:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	&.open #hamburger {
+		background: transparent !important;
+		&::before {
+			transform: translate(-5px, -6px) rotate(45deg);
+			transform-origin: 0 0;
+		}
+		&::after {
+			transform: translate(-5px, 6px) rotate(-45deg);
+			transform-origin: 0 100%;
+		}
+	}
+}

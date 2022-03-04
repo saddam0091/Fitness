@@ -1,0 +1,59 @@
+/* ===================================
+		       Select2
+=================================== */
+@use '../base/colors' as *;
+
+.select2-container {
+	width: 100% !important;
+}
+.select2-selection--single {
+	font-size: 1.4rem !important;
+	height: 40px !important;
+	border: 2px solid $color-light !important;
+	border-radius: 0.25rem !important;
+	background-color: transparent !important;
+	padding: 0.75rem 0.8rem !important;
+	letter-spacing: 0.2rem !important;
+}
+.country .select2-selection--single,
+.inputState .select2-selection--single {
+	border: 2px solid #999999 !important;
+	padding: 1rem !important;
+	height: 45px !important;
+	border-radius: 0 !important;
+	&:focus {
+		border-color: $color-primary !important;
+	}
+	b {
+		border-top-color: #888 !important;
+	}
+}
+.select2-selection__rendered {
+	color: $color-light !important;
+	line-height: initial !important;
+	padding-left: 0 !important;
+}
+#select2-country-container,
+#select2-inputState-container {
+	color: #000 !important;
+	font-weight: 500 !important;
+}
+.select2-selection__arrow {
+	height: initial !important;
+	top: 50% !important;
+	right: 9px !important;
+	b {
+		border-top-color: #fff !important;
+		border-bottom-color: #fff !important;
+	}
+}
+.select2-dropdown {
+	border: none !important;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+}
+.select2-search {
+	display: none;
+}
+.select2-results__option--highlighted {
+	background-color: $color-primary !important;
+}

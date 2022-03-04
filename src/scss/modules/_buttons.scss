@@ -1,0 +1,73 @@
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.button {
+	display: inline-block;
+	font-size: 1.3rem;
+	font-weight: 700;
+	color: $color-light-dark;
+	line-height: 1.5;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0.6rem 0;
+	border: 2px solid $color-light-grey;
+	border-radius: 0;
+	background-color: transparent;
+	user-select: none;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out;
+}
+.button-primary {
+	color: $color-primary;
+	border-color: $color-primary;
+	min-width: 120px;
+	@include md {
+		min-width: 140px;
+	}
+	@include xl {
+		min-width: 168px;
+	}
+	&:hover {
+		color: $color-light;
+		background-color: $color-primary;
+		border-color: $color-primary;
+	}
+}
+.button-light {
+	color: $color-light;
+	border-color: $color-light;
+	width: 110px;
+	padding: 0.6rem;
+	@include md {
+		width: 120px;
+	}
+	@include xl {
+		width: 130px;
+	}
+	&:hover {
+		color: $color-primary;
+		border-color: $color-light;
+		background-color: $color-light;
+	}
+}
+.button-card-dark {
+	width: 8.333em;
+	&:hover {
+		color: $color-primary;
+		background-color: $color-light;
+		border-color: $color-primary;
+	}
+}
+.button-card-light {
+	color: $color-light;
+	border-color: $color-light;
+	width: 100px;
+	&:hover {
+		color: $color-primary;
+		background-color: $color-light;
+		border-color: $color-light;
+	}
+}

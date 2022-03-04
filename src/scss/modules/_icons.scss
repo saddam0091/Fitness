@@ -1,0 +1,22 @@
+@use '../base/colors' as *;
+
+.social-icons .fab {
+	font-size: 1.2rem;
+	color: #fff;
+	margin-right: 1.5rem;
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		color: $color-primary !important;
+	}
+}
+.hero-area-sm .home-icon {
+	display: inline-block;
+	font-size: 1.4rem;
+	background-color: $color-primary;
+	text-align: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 2px;
+	line-height: 35px;
+}

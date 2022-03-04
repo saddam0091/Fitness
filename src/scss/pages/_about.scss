@@ -1,0 +1,128 @@
+/* ===================================
+			 About Page
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-about {
+	background: url(../img/about/hero.jpg) no-repeat center;
+}
+
+/* ========== About Us ========== */
+#about-about-us {
+	@include xxl {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	h2 {
+		text-transform: capitalize;
+	}
+	.img-area {
+		position: relative;
+		height: 100%;
+		border: 15px solid $color-primary;
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+		div {
+			@include xl {
+				position: absolute;
+				height: 100%;
+			}
+			@include xxl {
+				width: 80%;
+				height: 120%;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+	.para {
+		height: 233.91px;
+		overflow: hidden;
+		@include lg {
+			height: max-content;
+		}
+		@include xl {
+			height: 233.91px;
+		}
+	}
+	.owner-img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+	}
+	.owner span {
+		font-size: 1.2rem;
+	}
+	.img-wrapper {
+		@include xl {
+			padding-right: 3rem;
+		}
+	}
+}
+
+/* ========== Specifications ========== */
+#specifications {
+	.bg {
+		background-color: #252525;
+		&::after {
+			@include xl {
+				position: absolute;
+				content: '';
+				top: 0;
+				right: 0;
+				background: url(../img/about/specification-bg.jpg) no-repeat center;
+				background-size: cover;
+				width: 50%;
+				height: 100%;
+			}
+		}
+	}
+	.contents {
+		padding: 4rem 0;
+		@include lg {
+			padding-top: 6rem;
+		}
+		@include xl {
+			padding-top: 8rem;
+		}
+	}
+	ul {
+		margin-bottom: 0;
+		padding: 0;
+		li {
+			position: relative;
+			padding-left: 7.5rem;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			&::before {
+				position: absolute;
+				content: '\f5ae';
+				font-size: 3rem;
+				color: $color-primary;
+				left: 15px;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: all 0.2s ease-in-out;
+			}
+			&:hover {
+				color: #fff;
+				background-color: $color-primary;
+				&::before {
+					color: #fff;
+				}
+			}
+		}
+	}
+	.row .col-lg-6:first-child {
+		@include xl {
+			border-right: 6px solid $color-primary;
+		}
+	}
+}

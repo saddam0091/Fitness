@@ -1,0 +1,96 @@
+/* ===================================
+             Header
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Header Top ========== */
+.fa-phone-alt,
+.fa-envelope,
+.fa-map-marker-alt {
+	font-size: 14px;
+	vertical-align: middle;
+	margin-right: 1rem;
+}
+.header-top-left {
+	min-height: 44px;
+	li:not(:last-child) {
+		margin-right: 2.5rem;
+		@include xl {
+			margin-right: 2rem;
+		}
+		@include xxl {
+			margin-right: 2.5rem;
+		}
+	}
+}
+
+.header-top-right {
+	.social-icons {
+		margin-right: 1.5rem;
+	}
+	.fab {
+		color: $color-light;
+		margin-right: 1.1rem;
+		@include xxl {
+			margin-right: 1.5rem;
+		}
+	}
+	button {
+		position: relative;
+		color: $color-light;
+		font-weight: bold;
+		height: 100%;
+		padding-right: 1.5rem;
+		padding-left: 0.6rem;
+		border: none;
+		letter-spacing: 0.4px;
+		background-color: $color-primary;
+		@include xxl {
+			padding: 0px 20px;
+		}
+		&::before {
+			position: absolute;
+			content: '';
+			display: table;
+			clear: both;
+			left: -20px;
+			top: 0;
+			border-left: 20px solid rgba(43, 9, 233, 0);
+			border-bottom: 44px solid $color-primary;
+		}
+	}
+}
+
+/* ========== Header Bottom / Primary Navbar ========== */
+.header-bottom {
+	background-color: $color-light;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+	.container {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		@include xl {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+.hb-scroll {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all 0.5s;
+	animation: hb-scroll 0.7s 1;
+	z-index: 2;
+}
+@keyframes hb-scroll {
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}

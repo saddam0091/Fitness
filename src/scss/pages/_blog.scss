@@ -1,0 +1,211 @@
+/* ===================================
+			 Blog Page
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+	overflow-x: hidden;
+}
+
+/* ========== Hero Area ========== */
+#hero-area-blog {
+	background: url(../img/team/hero.jpg) no-repeat center;
+}
+
+/* ========== All Blogs ========== */
+.single-blog {
+	.text-area {
+		border-bottom: 1px solid $color-body;
+	}
+	.button {
+		margin-top: 1rem;
+	}
+	.writer img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		margin-right: 2rem;
+	}
+	.blog-footer {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		ul {
+			@include xs {
+				max-width: 400px;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: space-between;
+			}
+			> * {
+				@include xxl {
+					margin-left: 3rem;
+				}
+			}
+		}
+	}
+}
+
+/* ========== Right Sidebar ========== */
+.banner-area {
+	height: 250px;
+	color: #fff;
+	background-color: $color-primary;
+	margin: auto;
+}
+.widget-title {
+	padding: 1.2rem 3rem;
+	color: #fff;
+	background-color: #424344;
+}
+.widget-first {
+	li {
+		padding: 1.2rem 3rem;
+		font-weight: 500;
+		background-color: #fff;
+	}
+}
+.widget-first li a,
+.widget-second li a {
+	display: block;
+	color: $color-grey;
+	cursor: pointer;
+	transition: all 0.15s ease-in-out;
+}
+.widget-first a:hover {
+	color: $color-primary;
+}
+[class|='widget'] ul > *:not(:last-child) {
+	border-bottom: 1px solid $color-body;
+}
+.widget-second {
+	li {
+		padding: 1.5rem;
+		background-color: #fff;
+		a {
+			&:hover h6 {
+				color: $color-primary;
+			}
+			@include xs {
+				display: flex;
+				align-items: center;
+			}
+			@include lg {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			@include xxl {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+		img {
+			@include xs {
+				width: 120px;
+				margin-right: 1.5rem;
+			}
+		}
+	}
+	h6 {
+		text-transform: capitalize;
+		margin-top: 1.5rem;
+		transition: all 0.15s ease-in-out;
+		@include xs {
+			margin-top: 0;
+		}
+		@include lg {
+			margin-top: 1.5rem;
+		}
+		@include xxl {
+			margin-top: 0;
+		}
+	}
+}
+.play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.5rem;
+	color: $color-primary;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: $color-light;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&::before {
+		@extend %play-btn-pseudo;
+		width: 60px;
+		height: 60px;
+	}
+	&::after {
+		@extend %play-btn-pseudo;
+		width: 50px;
+		height: 50px;
+	}
+	&:hover::before {
+		animation-delay: 0.5s;
+	}
+	&:active {
+		&::before {
+			animation: none;
+		}
+		&::after {
+			animation: none;
+		}
+	}
+}
+.widget-contact {
+	.contents-wrapper {
+		background-color: #4f4f4f;
+	}
+	&-bottom {
+		position: relative;
+		height: 50px;
+		background-color: #fff;
+		img {
+			width: 190px;
+			position: absolute;
+			right: 25px;
+			bottom: 0;
+		}
+	}
+	input,
+	select {
+		font-size: 1.4rem;
+		color: $color-light;
+		border: 2px solid $color-light;
+		background-color: transparent;
+		padding: 0.75rem 0.8rem;
+		letter-spacing: 0.2rem;
+	}
+	input {
+		&:focus {
+			outline: none;
+			border-color: $color-primary;
+			box-shadow: none;
+			color: $color-light;
+			background-color: transparent;
+		}
+		&::placeholder {
+			color: $color-light;
+		}
+	}
+	.button {
+		height: 40px;
+		font-weight: 600;
+		border-color: $color-primary;
+		background-color: $color-primary;
+		&:hover {
+			border-color: $color-light;
+			background-color: $color-light;
+		}
+	}
+	.fab {
+		color: $color-grey;
+	}
+}

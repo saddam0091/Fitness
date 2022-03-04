@@ -1,0 +1,57 @@
+/* ========== SCSS Mixins ========== */
+
+@use '../base/breakpoints' as *;
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin xxs {
+	$vw: map-get($breakpoints, 'xxs');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin xs {
+	$vw: map-get($breakpoints, 'xs');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin sm {
+	$vw: map-get($breakpoints, 'sm');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin md {
+	$vw: map-get($breakpoints, 'md');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin lg {
+	$vw: map-get($breakpoints, 'lg');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin xl {
+	$vw: map-get($breakpoints, 'xl');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin xxl {
+	$vw: map-get($breakpoints, 'xxl');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}
+@mixin wide {
+	$vw: map-get($breakpoints, 'wide');
+	@media screen and (min-width: '#{$vw}px') {
+		@content;
+	}
+}

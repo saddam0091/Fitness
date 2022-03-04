@@ -1,0 +1,101 @@
+/* ===================================
+			 Contact Page
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-contact {
+	background: url(../img/contact/hero.jpg) no-repeat center;
+}
+
+/* ========== Contact Area ========== */
+#contact-details {
+	ul {
+		list-style-type: none;
+		color: #fff;
+		background-color: $color-primary;
+		padding: 2rem 4rem;
+		margin-bottom: 1.5rem;
+		@include xl {
+			margin-bottom: 3rem;
+		}
+		@include xxl {
+			padding: 0 7rem;
+		}
+		li {
+			position: relative;
+			padding: 1rem 0 1rem 6rem;
+			cursor: pointer;
+			border-bottom: 3px solid rgba(255, 255, 255, 0);
+			transition: all 0.3s ease-in-out;
+			@include xxl {
+				padding: 3.5rem 0 3.5rem 8rem;
+			}
+			&:hover {
+				border-bottom: 3px solid #fff;
+			}
+			&:first-child:before {
+				content: '\f095';
+			}
+			&:nth-child(2):before {
+				content: '\f658';
+			}
+			&:last-child:before {
+				content: '\f5a0';
+			}
+			&::before {
+				font-size: 3rem;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				@include xxl {
+					font-size: 5rem;
+				}
+			}
+			&:hover::before {
+				color: #941824;
+			}
+		}
+	}
+}
+.form-area {
+	.form-control {
+		background-color: transparent;
+		padding: 0.7rem 2rem;
+		font-size: 1.4rem;
+		font-weight: 600;
+		border: 2px solid #ebebeb;
+	}
+	.social-icons {
+		background-color: $color-primary;
+		text-align: center;
+		padding: 2.5rem 0;
+		.fab {
+			color: #fff;
+			&:hover {
+				color: #941824 !important;
+			}
+		}
+	}
+	.form-wrapper {
+		background-color: #fff;
+		padding: 3rem;
+		@include xxl {
+			padding: 7rem;
+		}
+	}
+}
+.map-area {
+	.map {
+		width: 100%;
+		height: 300px;
+		@include lg {
+			height: 100%;
+		}
+		// @include xl {
+		// 	height: 100%;
+		// }
+	}
+}

@@ -1,0 +1,36 @@
+@use '../base/colors' as *;
+@use '../abstracts/placeholders' as *;
+
+.search-box {
+	@extend %search-cart;
+	background-color: $color-secondary;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3) !important;
+	right: 122px;
+	top: 100%;
+	.form-control {
+		padding: 1rem;
+	}
+	input {
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		color: #ccc;
+		font-size: 13px;
+		font-style: italic;
+		height: auto;
+		&:focus {
+			color: #ccc;
+			background-color: transparent;
+			box-shadow: none;
+			outline: none;
+		}
+	}
+	.close {
+		font-size: 13px;
+		color: $color-primary;
+		cursor: pointer;
+		position: absolute;
+		right: 8px;
+		top: 3px;
+	}
+}

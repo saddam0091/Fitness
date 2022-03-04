@@ -1,0 +1,62 @@
+@use './colors' as *;
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 0.625rem;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	background-position-x: center;
+	background-color: $color-body;
+	overflow-x: hidden;
+}
+ol,
+ul {
+	list-style-type: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border-style: none;
+}
+a {
+	text-decoration: none;
+}
+::selection {
+	background-color: #ebebeb;
+	text-shadow: none;
+}

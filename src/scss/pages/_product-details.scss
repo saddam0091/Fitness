@@ -1,0 +1,250 @@
+/* ===================================
+			 Product Details Page
+=================================== */
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-product-details {
+	background: url(../img/product-details/hero.jpg) no-repeat center;
+}
+
+/* ========== Product Details ========== */
+.product-details {
+	.shipping,
+	.shield {
+		width: 126px;
+	}
+	.product-info {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		@include md {
+			padding: 3.5rem 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		table td {
+			padding-right: 10px;
+			padding-bottom: 5px;
+		}
+	}
+	.product-info-footer {
+		color: #fff;
+		background-color: #424344;
+		padding: 2rem 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		@include md {
+			padding: 3.5rem 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+	}
+	.featured-img-area {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		margin-bottom: 1rem;
+		@include md {
+			padding: 3.5rem 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+			margin-bottom: 2rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+	}
+	.swiper-button-prev::after {
+		content: '\f053';
+	}
+	.swiper-button-next::after {
+		content: '\f054';
+	}
+	.gallery-thumbs {
+		.swiper-slide-thumb-active {
+			border: 1px solid $color-primary;
+		}
+		.swiper-slide {
+			background-color: #fff;
+			padding: 0.5rem;
+			@include lg {
+				padding: 1rem;
+			}
+			@include xl {
+				padding: 0.5rem;
+			}
+			@include xxl {
+				padding: 1rem;
+			}
+		}
+	}
+}
+.product-details,
+.product-more-info {
+	tbody tr:hover {
+		box-shadow: none;
+	}
+	.list-items-1 li {
+		position: relative;
+		margin-bottom: 25px;
+		padding-left: 45px;
+	}
+	.list-items-1 li::before {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		content: '\f14a';
+		font-size: 3.5rem;
+		font-weight: normal;
+		color: $color-primary;
+	}
+	table tr > *:first-child {
+		padding-left: 0 !important;
+	}
+}
+.product-more-info {
+	.nav-pills {
+		position: sticky;
+		top: 70.36px;
+	}
+	#review .h7 {
+		display: block;
+		background-color: #fff;
+		padding: 1.6rem 0 1.6rem 1.5rem;
+		margin-bottom: 0.6rem;
+		@include md {
+			padding-left: 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			margin-bottom: 1.2rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+		}
+	}
+	#descr > div,
+	#info > div {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		@include md {
+			padding: 3.5rem 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+	}
+	.table-1 {
+		tbody tr > * {
+			padding-right: 60px !important;
+			padding-top: 5px !important;
+			padding-bottom: 5px !important;
+		}
+		tr > *:first-child {
+			@include lg {
+				padding-left: 0 !important;
+			}
+		}
+	}
+	.avatar::before {
+		content: '\f2bd';
+		font-size: 3rem;
+		color: $color-grey;
+	}
+	.customer {
+		padding: 2.5rem 1.5rem;
+		margin-bottom: 2rem;
+		background-color: #fff;
+		@include md {
+			padding: 3.5rem 4.5rem;
+		}
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+		@include xl {
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		@include xxl {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+		}
+	}
+}
+
+/* ========== Related & Popular Products ========== */
+.related-product,
+.popular-product {
+	background: none;
+	h5 {
+		margin-left: 1.5rem;
+		margin-bottom: 3rem;
+		@include md {
+			margin-bottom: 4rem;
+			margin-left: 4.5rem;
+		}
+		@include lg {
+			margin-left: 5.5rem;
+		}
+		@include xxl {
+			margin-bottom: 5rem;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			width: 52px;
+			height: 3px;
+			background-color: $color-primary;
+		}
+	}
+	.shipping,
+	.shield {
+		width: 126px;
+	}
+	.swiper3 .swiper-pagination-bullet {
+		background-color: $color-secondary;
+	}
+}

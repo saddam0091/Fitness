@@ -1,0 +1,99 @@
+/* ===================================
+             Footer
+=================================== */
+@use '../base/colors' as *;
+@use '../base/breakpoints' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+#footer-content {
+	.bg::before {
+		@include xl {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 50%;
+			background: url(../img/footer/footer-bg.png) no-repeat left;
+			background-size: cover;
+			width: 40%;
+			height: 100%;
+		}
+	}
+	.info-wrapper {
+		margin-bottom: 1.5rem;
+	}
+	.title {
+		display: block;
+		font-size: 1.9rem;
+		color: $color-dark;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		line-height: 1.5;
+		margin-bottom: 0.5em;
+	}
+	.links {
+		margin-bottom: 3rem;
+	}
+	.button {
+		width: max-content;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	.list-group-item {
+		position: relative;
+		border: 0;
+		padding-top: 0.2rem;
+		padding-bottom: 0.2rem;
+	}
+	.single-widget {
+		.list-group-item {
+			&::before {
+				font-family: 'Font Awesome 5 Free';
+				content: '\f054';
+				color: $color-primary;
+				font-weight: 900;
+				position: absolute;
+				left: -6px;
+				opacity: 0;
+				transition: all 0.3s ease;
+			}
+			&:hover::before {
+				opacity: 1;
+			}
+		}
+		h5 {
+			margin-bottom: 0.5em;
+			transition: all 0.3s ease;
+		}
+		&:hover h5 {
+			color: $color-primary;
+		}
+	}
+	.logo {
+		width: 130px;
+		position: absolute;
+		bottom: 25%;
+		right: 0;
+		@include xxl {
+			right: 75px;
+		}
+		@include wide {
+			right: 170px;
+		}
+	}
+	#copyright .container {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	a {
+		display: inline-block;
+		color: $color-grey;
+	}
+}
+@each $screen-name, $size in $breakpoints {
+	@media screen and (min-width: '#{$size}px') {
+		#footer-content .contents-wrapper {
+			padding-bottom: margin-calc(3rem, 8rem, $size);
+		}
+	}
+}

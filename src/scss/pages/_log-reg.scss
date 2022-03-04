@@ -1,0 +1,54 @@
+/* ===================================
+			 Log in & Registration Page
+=================================== */
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-log-reg {
+	background: url(../img/login/hero.jpg) no-repeat center;
+}
+
+/* ========== Login Area ========== */
+#log-reg {
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+	form a {
+		margin-top: 1rem;
+		@include xs {
+			margin-top: 0;
+		}
+	}
+	.form-bottom {
+		margin-top: 1.5rem;
+		@include xs {
+			display: flex;
+			justify-content: space-between;
+		}
+		@include xl {
+			margin-top: 3rem;
+		}
+		@include xxl {
+			margin-top: 4rem;
+		}
+	}
+	.login-form {
+		div:last-child {
+			@include xs {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+	.cont-wrap-pad-xm {
+		@include xl {
+			padding-left: 3.5rem;
+			padding-right: 3.5rem;
+		}
+		@include xxl {
+			padding-left: 6.5rem;
+			padding-right: 6.5rem;
+		}
+	}
+}

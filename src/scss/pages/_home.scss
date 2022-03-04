@@ -1,0 +1,1022 @@
+/* ===================================
+			 Home Page
+=================================== */
+@use '../base/colors' as *;
+@use '../base/breakpoints' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+/* ========== Hero Area ========== */
+#hero-area {
+	background: url(../img/home/home-hero-bg.jpg) no-repeat center;
+	background-size: cover;
+	color: $color-light;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	.overlay {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(
+			to top,
+			rgba(24, 24, 24, 1) 0%,
+			rgb(48, 48, 48, 0.5) 100%
+		);
+		z-index: -1;
+	}
+	.contents {
+		padding-top: 8rem;
+		padding-bottom: 16rem;
+		@include sm {
+			padding: 10rem 0 20rem;
+			width: 80%;
+		}
+		@include lg {
+			padding: 13.4rem 0 26.6rem;
+		}
+		@include xl {
+			padding: 13rem 0 18.4rem;
+		}
+		@include xxl {
+			padding: 20.4rem 0 23rem;
+		}
+		span {
+			line-height: 1.3;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-weight: 300;
+		}
+	}
+	h1 {
+		font-style: italic;
+		font-weight: 900;
+		line-height: 1.3;
+		letter-spacing: 1px;
+		margin: 0.25em 0;
+	}
+	h4 {
+		letter-spacing: 0.1em;
+		font-weight: 600;
+		line-height: 1.3;
+		@include md {
+			letter-spacing: 0.2em;
+		}
+		@include lg {
+			letter-spacing: 0.3em;
+		}
+	}
+	p {
+		max-width: 400px;
+		margin: auto;
+	}
+	.button {
+		margin-top: 3rem;
+		@include lg {
+			margin-top: 4.5rem;
+		}
+	}
+}
+
+/* ========== Trainers ========== */
+#trainers {
+	margin-top: -85px;
+	.contents-wrapper {
+		background-color: $color-primary;
+	}
+	h4 {
+		font-weight: 600;
+	}
+	.img-wrapper {
+		position: absolute;
+		width: 37%;
+		right: 7%;
+		top: -20%;
+		@include lg {
+			width: 40%;
+			right: 5%;
+			top: 5%;
+		}
+		@include xl {
+			width: 35%;
+			right: 8%;
+			top: -10%;
+		}
+		@include xxl {
+			width: 25%;
+			top: -25%;
+		}
+		@include wide {
+			width: 21%;
+			right: 10%;
+			top: -32%;
+		}
+	}
+	&-bottom {
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		background-color: $color-light;
+		padding: 1.5rem;
+		@include lg {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		@include xl {
+			padding-left: 6.5rem;
+			padding-right: 6.5rem;
+		}
+	}
+	p {
+		@include lg {
+			max-width: 50%;
+		}
+		@include xxl {
+			max-width: initial;
+		}
+	}
+}
+
+/* ========== About Us ========== */
+#about-us {
+	.text-area {
+		border: 6px solid $color-primary;
+		@include sm {
+			border-width: 8px;
+		}
+		@include md {
+			border-width: 10px;
+		}
+		@include xl {
+			border: 15px solid $color-primary;
+			padding: 5rem 6rem 5rem 5rem;
+		}
+		@include wide {
+			padding-top: 65px;
+			padding-bottom: 65px;
+		}
+	}
+	.para {
+		height: 246.3px;
+		overflow: hidden;
+		@include xxs {
+			height: 286px;
+		}
+		@include sm {
+			height: max-content;
+		}
+	}
+	.item-img-horizontal div::after {
+		content: 'SINCE 1990';
+		background-color: #fff;
+		text-align: center;
+		padding: 0.5em 1em;
+		font-size: 12px;
+		font-weight: 700;
+		color: $color-dark;
+		letter-spacing: 2px;
+		position: absolute;
+		bottom: 0%;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		@include md {
+			font-size: 1.5rem;
+		}
+	}
+	.img-area {
+		border: 10px solid $color-primary;
+		margin-top: 2.5rem;
+		height: 40vw;
+		position: relative;
+		@include md {
+			height: 220px;
+		}
+		@include lg {
+			height: 270px;
+		}
+		@include xl {
+			border: 15px solid $color-primary;
+			height: 100%;
+			margin-top: 0;
+		}
+		div {
+			position: absolute;
+			top: 50%;
+			right: 15%;
+			transform: translateY(-50%);
+			&::after {
+				content: 'SINCE 1990';
+				background-color: #fff;
+				padding: 1.5rem;
+				font-weight: 700;
+				font-size: 20px;
+				width: 209px;
+				text-align: center;
+				color: $color-dark;
+				letter-spacing: 0.3rem;
+				position: absolute;
+				bottom: -70px;
+				left: 50%;
+				transform: translateX(-50%) rotateZ(-90deg);
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			@include xl {
+				width: 116%;
+				height: 481px;
+			}
+			@include xxl {
+				width: 115%;
+				height: 415px;
+				right: 12%;
+			}
+			@include wide {
+				width: 113%;
+				height: 423px;
+			}
+		}
+		img {
+			@include xl {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	picture img {
+		@include lg {
+			top: -29%;
+		}
+	}
+	@include xl {
+		padding-bottom: 68px;
+	}
+	.flex-item-1 {
+		@include xl {
+			flex-basis: 52.6%;
+		}
+	}
+	.flex-item-2 {
+		@include xl {
+			flex-basis: 42.7%;
+		}
+	}
+}
+
+/* ========== Our Services ========== */
+#our-services {
+	&-wrapper {
+		background-color: $color-light;
+	}
+	.contents {
+		background-color: $color-light;
+		@include xl {
+			padding: 5.5rem 6.5rem;
+		}
+		@include xxl {
+			padding: 5.5rem 1.5rem 5.5rem 6.5rem;
+		}
+	}
+	.item-content {
+		background-color: $color-light;
+		transition: all 0.3s ease-in-out;
+	}
+	.single-item {
+		max-width: 300px;
+		margin: auto;
+		&:hover {
+			.item-content {
+				color: $color-light;
+				background-color: $color-primary;
+			}
+			h6 {
+				color: $color-light;
+			}
+			.button {
+				color: $color-light;
+				border-color: $color-light;
+			}
+		}
+		img {
+			transition: all 0.3s ease-in-out;
+		}
+		&:hover img {
+			transform: scale(1.08);
+		}
+		@include lg {
+			max-width: initial;
+		}
+	}
+	.button:hover {
+		color: $color-primary !important;
+		background-color: $color-light;
+	}
+	.cards {
+		@include sm {
+			width: 50%;
+		}
+		@include xl {
+			width: 33.33333333%;
+		}
+	}
+	p {
+		@include xl {
+			max-width: 425px;
+		}
+	}
+	.info-wrapper {
+		@include xxl {
+			flex-basis: 28%;
+		}
+	}
+	.items-wrapper {
+		@include xxl {
+			flex-basis: 72%;
+		}
+	}
+}
+
+/* ========== Blog ========== */
+#blog {
+	.contents-wrapper {
+		color: $color-light;
+		padding-bottom: 7rem;
+		@include lg {
+			padding-bottom: 10rem;
+		}
+		@include xl {
+			padding: 5rem 5rem 11rem;
+		}
+		@include xxl {
+			padding: 5.5rem 5.5rem 9rem;
+			height: 100%;
+		}
+		@include wide {
+			padding-top: 6.5rem;
+		}
+	}
+	h4 {
+		letter-spacing: 0.2rem;
+	}
+	.blog-body {
+		overflow: hidden;
+	}
+	.more {
+		position: absolute;
+		right: 20px;
+		bottom: 67px;
+		width: calc(100% - 35px);
+		.button {
+			position: absolute;
+			top: 3px;
+			z-index: 1;
+		}
+		@include lg {
+			width: calc(50% - 50px);
+		}
+		@include xl {
+			width: calc(50% - 100px);
+			right: 50px;
+			bottom: 86px;
+		}
+		@include xxl {
+			right: 55px;
+			bottom: 91px;
+			width: calc(50% - 110px);
+		}
+		@include wide {
+			bottom: 96px;
+		}
+	}
+	.img-wrapper {
+		@include lg {
+			height: 100%;
+		}
+		img {
+			@include lg {
+				height: 100%;
+				object-fit: cover;
+			}
+			@include xxl {
+				height: 620px;
+			}
+			@include wide {
+				height: 720px;
+			}
+		}
+	}
+}
+
+/* ========== Gym Services ========== */
+.services {
+	.single-item {
+		margin-top: 7rem !important;
+		min-height: 315.5px;
+		max-width: 300px;
+		margin: auto;
+		&:hover {
+			@extend %box-shadow-card;
+
+			.service-icon i {
+				background-color: $color-primary;
+				box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+			}
+		}
+	}
+	.service-icon {
+		position: relative;
+		top: -42px;
+		@include lg {
+			top: -58px;
+		}
+		span i {
+			display: inline-block;
+			font-size: 1.7em;
+			color: #fff;
+			background: #484848;
+			width: 95px;
+			height: 95px;
+			border: 15px solid #ebebeb;
+			border-radius: 10px;
+			line-height: 67px;
+			transition: all 0.3s ease-in-out;
+			@include lg {
+				font-size: 2em;
+				width: 128px;
+				height: 128px;
+				border: 18px solid #ebebeb;
+				border-radius: 13px;
+				line-height: 92px;
+			}
+		}
+	}
+	.item-content {
+		margin-top: -2rem;
+	}
+}
+#gym-services .cards {
+	@include sm {
+		width: 50%;
+	}
+	@include xl {
+		width: 33.33333333%;
+		max-width: initial;
+	}
+	@include xxl {
+		width: 25%;
+	}
+}
+
+/* ========== Contact Us ========== */
+#contact-us {
+	img {
+		position: absolute;
+		top: -138px;
+		left: -67px;
+		width: 127%;
+		@include lg {
+			top: -63px;
+			left: -57px;
+		}
+		@include xl {
+			width: 82%;
+			top: -93px;
+			left: 3px;
+		}
+		@include xxl {
+			width: 83%;
+			left: -3px;
+		}
+		@include wide {
+			width: 84%;
+			left: -10px;
+		}
+	}
+	p {
+		@include xl {
+			max-width: 425px;
+		}
+	}
+	.contents-wrapper > div {
+		background-color: #424344;
+	}
+	&-bottom {
+		padding: 1.5rem;
+	}
+	input,
+	select {
+		font-size: 1.4rem;
+		color: $color-light;
+		border: 2px solid $color-light;
+		background-color: transparent;
+		padding: 0.75rem 0.8rem;
+		letter-spacing: 0.2rem;
+	}
+	input::placeholder {
+		color: $color-light;
+	}
+	input:focus {
+		outline: none;
+		border-color: $color-primary;
+		box-shadow: none;
+	}
+	.button {
+		height: 40px;
+		font-weight: 600;
+		border-color: $color-primary;
+		background-color: $color-primary;
+		&:hover {
+			border-color: $color-light;
+			background-color: $color-light;
+		}
+	}
+	.fab {
+		color: $color-grey;
+	}
+	&-bottom {
+		@include xxl {
+			padding: 2.5rem 4.5rem;
+		}
+	}
+	.flex-container > div {
+		&:not(:last-child) {
+			@include wide {
+				flex-basis: 29%;
+			}
+		}
+		&:last-child {
+			@include wide {
+				flex-basis: 10%;
+			}
+		}
+	}
+}
+
+/* ========== Equipments ========== */
+#equipments {
+	.bg {
+		background-color: $color-light;
+		z-index: 0;
+		@include xl {
+			padding-top: 10rem;
+			padding-bottom: 10rem;
+		}
+		@include xxl {
+			padding-top: 15rem;
+			padding-bottom: 15rem;
+		}
+		&::before {
+			@include xl {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				background: url(../img/home/equipment-bg.jpg) no-repeat center;
+				background-size: cover;
+				width: 50%;
+				height: 100%;
+			}
+		}
+	}
+	.text-area {
+		cursor: pointer;
+		h6 {
+			transition: all 0.2s ease-in-out;
+		}
+		&hover h6 {
+			color: $color-primary;
+		}
+	}
+	.img-area {
+		@include xl {
+			width: 25%;
+		}
+	}
+	.contents-wrapper {
+		> *:not(:last-child) {
+			margin-bottom: 3rem;
+			@include xl {
+				margin-bottom: 4rem;
+			}
+			@include xxl {
+				margin-bottom: 6rem;
+			}
+		}
+		@include xl {
+			position: relative;
+			left: -72px;
+			width: 536px;
+		}
+		@include xxl {
+			left: -86px;
+			width: 630px;
+		}
+		@include wide {
+			left: -100px;
+			width: 744px;
+		}
+	}
+}
+
+/* ========== GYM NEWS ========== */
+#news {
+	.text-area {
+		span {
+			display: inline-block;
+			font-size: 1.2rem;
+			margin-bottom: 1.4rem;
+		}
+		@include xl {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+	}
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+	.single-item {
+		@include xxl {
+			height: 328.69px;
+		}
+		@include wide {
+			height: 363.69px;
+		}
+	}
+	.button {
+		width: 120px;
+	}
+	.read-more {
+		position: absolute;
+		width: max-content;
+		right: 0;
+		top: -35px;
+		a {
+			color: $color-grey;
+			font-size: 1.5rem;
+			transition: all 0.2s ease-in-out;
+			&::after {
+				content: '\f101';
+				margin-left: 0.5rem;
+			}
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+}
+
+/* ========== Training ========== */
+#training {
+	> div:first-child {
+		background: url(../img/home/training-bg.jpg) no-repeat center;
+		background-size: cover;
+		position: relative;
+		z-index: 0;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgb(48, 48, 48, 0.5);
+			z-index: -1;
+		}
+	}
+	.info-wrapper {
+		min-height: 350px;
+		@include md {
+			min-height: 380px;
+		}
+		@include lg {
+			min-height: 500px;
+		}
+		@include wide {
+			min-height: 770px;
+		}
+	}
+	.contents {
+		p {
+			font-size: 1.7rem;
+			line-height: 1.2;
+			margin-bottom: 1.5rem;
+			@include md {
+				font-size: 2.2rem;
+			}
+			@include lg {
+				font-size: 2.3rem;
+			}
+			@include xl {
+				font-size: 2.4rem;
+			}
+		}
+		div {
+			font-size: 2.5rem;
+			line-height: 1.2;
+			span {
+				font-weight: 700;
+			}
+			@include md {
+				font-size: 4rem;
+			}
+			@include lg {
+				font-size: 4.5rem;
+			}
+			@include xl {
+				font-size: 5rem;
+			}
+		}
+	}
+	.sign {
+		width: 140px;
+		margin: auto;
+		@include xl {
+			width: 250px;
+		}
+		@include xxl {
+			width: 287px;
+		}
+	}
+	[class|='flex-item'] {
+		font-size: 1.3rem;
+		color: $color-light;
+		padding: 3.5rem 1.5rem 2.5rem;
+		height: auto;
+		margin: auto;
+		@include xl {
+			padding-top: 4rem;
+		}
+		@include xxl {
+			padding-top: 4.5rem;
+		}
+		@include wide {
+			padding: 5.5rem;
+		}
+		span {
+			display: block;
+			margin-bottom: 1.6rem;
+		}
+	}
+	.flex-item-1 {
+		background-color: #d41b2d;
+	}
+	.flex-item-2 {
+		background-color: #bc1727;
+	}
+	.flex-item-3 {
+		background-color: #a51321;
+	}
+	.flex-item-4 {
+		background-color: #8d0f1b;
+	}
+	.flex-item-5 {
+		background-color: #760b15;
+	}
+	.flex-item-6 {
+		background-color: #5e070f;
+	}
+}
+@each $screen-name, $size in $breakpoints {
+	@media screen and (min-width: '#{$size}px') {
+		#training .sign {
+			margin-top: margin-calc(0.75rem, 5rem, $size);
+		}
+	}
+}
+
+/* ========== Coaches ========== */
+#coach {
+	.single-item:hover .item-content {
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	}
+	.fab {
+		color: $color-grey;
+	}
+	.single-item {
+		padding: 0;
+		margin-top: -3rem;
+		background-color: transparent;
+		max-width: 300px;
+		margin: auto;
+		@include md {
+			margin-top: -1rem;
+		}
+		@include lg {
+			margin-top: 0;
+		}
+		&:hover .item-img {
+			top: 30px;
+		}
+	}
+	.item-img {
+		width: 85%;
+		position: relative;
+		top: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		transition: all 0.2s ease-in;
+	}
+	.item-content {
+		background-color: $color-light;
+		padding: 8rem 1.5rem 2.5rem;
+		transition: all 0.2s ease-in;
+	}
+	.row > * {
+		@include sm {
+			width: 50%;
+		}
+		@include xl {
+			width: 33.33333333%;
+		}
+		@include xxl {
+			width: 25%;
+		}
+	}
+}
+
+/* ========== Gym Shop ========== */
+.gym-shop {
+	background: url(../img/home/shop-bg.jpg) no-repeat center;
+	background-size: cover;
+	padding: 3.5rem 0;
+	@include lg {
+		padding: 3.5rem 0;
+	}
+	@include xl {
+		padding: 5.5rem 0;
+	}
+	.single-item:hover {
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	}
+	.item-info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 95px;
+		> * {
+			flex-basis: 48%;
+		}
+	}
+	.pricing {
+		font-size: 1.5rem;
+		font-weight: 600;
+		text-align: center;
+		small {
+			font-size: 1.2rem;
+			margin-left: 1rem;
+		}
+	}
+}
+
+/* ========== Testimonial ========== */
+#testimonial {
+	.contents {
+		color: #626262;
+		p {
+			font-size: 1.7rem;
+			line-height: 1.2;
+			margin-bottom: 1.5rem;
+			@include md {
+				font-size: 2.2rem;
+			}
+			@include lg {
+				font-size: 2.3rem;
+			}
+			@include xl {
+				font-size: 2.4rem;
+			}
+		}
+		div {
+			font-size: 2.7rem;
+			line-height: 1.2;
+			@include md {
+				font-size: 3rem;
+			}
+			@include lg {
+				font-size: 3.5rem;
+			}
+			@include xl {
+				font-size: 4rem;
+			}
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+	> div:first-child {
+		background-color: #f8f8f8;
+		z-index: -1;
+	}
+	.section-title span {
+		color: #626262;
+	}
+	.container {
+		overflow: hidden;
+		margin-top: -4.6rem;
+	}
+	.info-wrapper {
+		padding-bottom: 3rem;
+	}
+	.sign {
+		width: 140px;
+		margin: auto;
+		@include xl {
+			width: 250px;
+		}
+		@include xxl {
+			width: 287px;
+		}
+	}
+	.single-item {
+		width: 100%;
+		text-align: center;
+		@include xs {
+			width: 50%;
+		}
+		@include lg {
+			width: 33.33333%;
+		}
+		@include xl {
+			width: 25%;
+		}
+		@include xxl {
+			width: 20%;
+		}
+		&:hover {
+			.item-img {
+				border: 14px solid #ebebeb;
+			}
+			.item-content h6 {
+				color: $color-dark;
+			}
+		}
+	}
+	.item-img {
+		width: 90px;
+		margin: 0 auto;
+		border: 14px solid #ebebeb00;
+		transition: all 0.3s ease;
+	}
+	.item-content h6 {
+		letter-spacing: 0.15rem;
+		transition: all 0.3s ease;
+	}
+}
+@each $screen-name, $size in $breakpoints {
+	@media screen and (min-width: '#{$size}px') {
+		#testimonial {
+			.quote {
+				margin-top: margin-calc(3rem, 20rem, $size);
+				margin-bottom: margin-calc(1.5rem, 10rem, $size);
+			}
+			.sign {
+				margin-bottom: margin-calc(1.2rem, 8rem, $size);
+			}
+		}
+	}
+}
+
+/* ========== Gallery ========== */
+#gallery {
+	.item-img {
+		max-width: 450px;
+		margin: auto;
+		height: auto;
+	}
+	.container {
+		bottom: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+}
+
+/* ========== Brands ========== */
+#brand {
+	.item-img {
+		img {
+			opacity: 0.5;
+			transition: all 0.5s ease;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/* ========== Social Contact ========== */
+#contact-links {
+	.fab {
+		color: $color-grey;
+	}
+	.container {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}

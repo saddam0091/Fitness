@@ -1,0 +1,51 @@
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+
+#custom-tab-menu li a {
+	display: block;
+	position: relative;
+	color: #000;
+	background-image: linear-gradient(to right, #fff, #fff);
+	padding: 1.6rem 0 1.6rem 4.5rem;
+	cursor: pointer;
+	@include lg {
+		padding-left: 5.5rem;
+	}
+	@include xl {
+		padding-left: 6.5rem;
+	}
+	&.active {
+		background-image: linear-gradient(
+			to right,
+			#fff 50%,
+			rgba(255, 255, 255, 0)
+		);
+	}
+
+	&::before {
+		position: absolute;
+		content: '\f054';
+		text-align: center;
+		color: #fff;
+		background-color: #ebebeb;
+		width: 18px;
+		height: 18px;
+		line-height: 18px;
+		border-radius: 50%;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all 0.2s ease-in-out;
+		@include lg {
+			left: 25px;
+		}
+	}
+
+	&:hover::before,
+	&.active::before {
+		background-color: $color-primary;
+	}
+}
+#custom-tab-menu li:not(:last-child) a {
+	margin-bottom: 0.1rem;
+}

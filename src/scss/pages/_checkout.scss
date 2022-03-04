@@ -1,0 +1,185 @@
+/* ===================================
+			 Checkout Page
+=================================== */
+@use '../abstracts/mixins' as *;
+
+/* ========== Hero Area ========== */
+#hero-area-checkout {
+	background: url(../img/checkout/hero.jpg) no-repeat center;
+}
+
+/* ========== Client Information ========== */
+.billing-info {
+	.top {
+		ul {
+			@include md {
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+		}
+		li {
+			padding-left: 3rem;
+			@include xl {
+				padding-left: 4rem;
+			}
+			&:first-child {
+				@include xs {
+					flex-basis: 60%;
+				}
+				@include lg {
+					padding-left: 2.5rem;
+					padding-right: 2.5rem;
+				}
+			}
+			&:last-child {
+				@include xs {
+					flex-basis: 40%;
+					text-align: end;
+					padding-right: 0.8rem;
+				}
+				@include lg {
+					padding-left: 5.5rem;
+					padding-right: 5.5rem;
+				}
+			}
+		}
+		.fa-icon::before {
+			position: absolute;
+			left: 0px;
+			content: '\f007';
+			font-weight: normal;
+		}
+	}
+	#custom-tab-menu {
+		ul {
+			flex-direction: column;
+			@include sm {
+				flex-direction: row;
+			}
+			@include xl {
+				flex-direction: column;
+			}
+		}
+		li {
+			flex-basis: 50%;
+			a {
+				&.active {
+					background-image: linear-gradient(
+						to right,
+						#fff 50%,
+						rgba(255, 255, 255, 0)
+					);
+					@include sm {
+						background-image: linear-gradient(
+							to bottom,
+							#fff 50%,
+							rgba(255, 255, 255, 0)
+						);
+					}
+					@include xl {
+						background-image: linear-gradient(
+							to right,
+							#fff 50%,
+							rgba(255, 255, 255, 0)
+						);
+					}
+				}
+				&::before {
+					@include sm {
+						transform: translateY(-50%) rotate(90deg);
+					}
+					@include xl {
+						transform: translateY(-50%) rotate(0deg);
+					}
+				}
+			}
+		}
+	}
+	.form-area,
+	.form-wrapper,
+	.shipping-method,
+	.review-order {
+		background-color: #fff;
+		padding: 2.5rem 1.5rem;
+		margin-bottom: 1px;
+		@include lg {
+			padding: 3.5rem 5.5rem;
+		}
+	}
+	.promotional-code > div {
+		padding: 2.5rem 1.5rem;
+		@include lg {
+			padding: 3.5rem 5.5rem;
+		}
+	}
+	.form-title,
+	.payment-reviews-title {
+		position: relative;
+		background-color: #fff;
+		padding: 16px 0 16px 45px;
+		margin-bottom: 0.6rem;
+		@include lg {
+			padding-left: 5.5rem;
+			padding-right: 5.5rem;
+			margin-bottom: 1.2rem;
+		}
+	}
+	.form-title.fa-icon::before,
+	.payment-reviews-title::before {
+		position: absolute;
+		content: '\f07a';
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		@include lg {
+			left: 25px;
+		}
+	}
+	.form-title.fa-icon::before {
+		content: '\f07a';
+	}
+	.payment-reviews-title::before {
+		content: '\f09d';
+	}
+	.img-area {
+		width: 100px;
+		height: 100px;
+	}
+	table {
+		width: 100%;
+	}
+	tbody tr:hover {
+		box-shadow: none;
+	}
+	table th,
+	table td {
+		border-bottom: none;
+	}
+	tbody tr > * {
+		padding-top: 1rem !important;
+		padding-bottom: 1rem !important;
+	}
+	#first-row td {
+		padding-bottom: 20px;
+	}
+	table tr > *:not(:first-child) {
+		width: 80px;
+		text-align: center;
+	}
+	.payment-gateways .img-area {
+		height: auto;
+	}
+	.payment-gateways ul .img-area {
+		width: 50px;
+	}
+	table tr > *:first-child {
+		padding-left: initial !important;
+	}
+	table tr > *:last-child {
+		padding-right: initial !important;
+	}
+	.review-order img {
+		height: 100%;
+		object-fit: cover;
+	}
+}

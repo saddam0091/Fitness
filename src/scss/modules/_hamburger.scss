@@ -1,0 +1,18 @@
+@use '../base/colors' as *;
+@use '../abstracts/placeholders' as *;
+
+#hamburger {
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: $color-primary !important;
+	transition: all 0.4s ease-in-out;
+	&::before {
+		@extend %hamburger;
+		transform: translate(-9px, -6px);
+	}
+	&::after {
+		@extend %hamburger;
+		transform: translate(-9px, 6px);
+	}
+}
