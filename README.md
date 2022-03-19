@@ -6,4 +6,4 @@ using HTML5, Bootstrap 5 and Javascript. Additional features and styles are prov
 to the pages using CSS3. To make the source files more organized scss has been introduced.
 
 ## 🔗 Live Preview
-[Go Live](https://saddamhossain.com/)
+[Go Live](https://fitness.saddamhossain.com/)
